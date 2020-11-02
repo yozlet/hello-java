@@ -8,6 +8,7 @@ pipeline {
                 LD_PROJ_KEY = 'hello-java'
                 LD_REPO_NAME = 'hello-java'
                 LD_DIR = '.'
+                LD_BRANCH = env.BRANCH_NAME
             }
             steps {
                 sh 'ld-find-code-refs'
