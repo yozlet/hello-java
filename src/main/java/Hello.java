@@ -7,10 +7,10 @@ import java.io.IOException;
 public class Hello {
 
   // Set SDK_KEY to your LaunchDarkly SDK key before compiling
-  static final String SDK_KEY = "";
+  static final String SDK_KEY = "sdk-dd6dc077-97f0-4aa5-a366-81855423818e";
 
   // Set FEATURE_FLAG_KEY to the feature flag key you want to evaluate
-  static final String FEATURE_FLAG_KEY = "YOUR_FEATURE_KEY";
+  static final String FEATURE_FLAG_KEY = "example-flag";
 
   public static void main(String... args) throws IOException {
     if (SDK_KEY.equals("")) {
@@ -28,7 +28,7 @@ public class Hello {
                             .custom("groups", LDValue.buildArray().add("beta_testers").build())
                             .build();
 
-    boolean showFeature = client.boolVariation(FEATURE_FLAG_KEY, user, false);
+    boolean showFeature = client.boolVariation("example-flag", user, false);
 
     System.out.println("Feature flag '" + FEATURE_FLAG_KEY + "' is " + showFeature + " for this user");
 
