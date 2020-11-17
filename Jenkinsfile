@@ -10,7 +10,7 @@ pipeline {
                 LD_DIR = '.'
             }
             steps {
-                sh 'ld-find-code-refs -b master'
+                sh "ld-find-code-refs -b $GIT_BRANCH"
             }
         }
         stage('build') {
