@@ -10,7 +10,7 @@ pipeline {
                 LD_DIR = '.'
             }
             steps {
-                sh "ld-find-code-refs -b `echo \"$GIT_BRANCH\" | sed 's/^origin\///'`"
+                sh "ld-find-code-refs -b `echo \"$GIT_BRANCH\" | sed 's/^origin\\///'`"
             }
         }
         stage('build') {
