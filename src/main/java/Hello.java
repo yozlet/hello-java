@@ -18,8 +18,6 @@ public class Hello {
       System.exit(1);
     }
 
-    LDClient client = new LDClient(SDK_KEY);
-
     // Set up the user properties. This user should appear on your LaunchDarkly users dashboard
     // soon after you run the demo.
     LDUser user = new LDUser.Builder("bob@example.com")
@@ -27,6 +25,8 @@ public class Hello {
                             .lastName("Loblaw")
                             .custom("groups", LDValue.buildArray().add("beta_testers").build())
                             .build();
+
+    LDClient client = new LDClient(SDK_KEY);
 
     boolean showFeature = client.boolVariation("example-flag", user, false);
 
